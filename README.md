@@ -1,7 +1,13 @@
 
-  # Infinite Canvas Web App
+  🚀 Built for Make-a-thon: Canvas Infinite Workspace
 
-  This is a code bundle for Infinite Canvas Web App. The original project is available at https://www.figma.com/design/tH08U5z8U3fADIhorLAvGm/Infinite-Canvas-Web-App.
+  Not just a whiteboard — an AI-powered canvas where ideas, images, links & videos connect, organize, and come alive. 
+
+  ⚡ Summarize. 🌐 Suggest. 🎨 Auto-layout. 
+
+  Your brain, visualized.
+ 
+  The original project is available at [IdeaScape](https://clover-amount-02442961.figma.site/)
 
   ## Running the code
 
