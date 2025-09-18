@@ -1,0 +1,651 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #1B1D1E;
+  --foreground: oklch(0.985 0 0);
+  --card: #191A1B;
+  --card-foreground: oklch(0.985 0 0);
+  --popover: #191A1B;
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom minimalistic scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border: none;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Rich text editor styles */
+.rich-text-content {
+  line-height: 1.4;
+  white-space: pre-wrap; /* Preserve line breaks and spaces */
+}
+
+.rich-text-content p {
+  margin: 0;
+  line-height: inherit;
+}
+
+.rich-text-content div {
+  margin: 0;
+  line-height: inherit;
+}
+
+.rich-text-content br {
+  line-height: inherit;
+  display: block; /* Ensure br tags are properly displayed */
+  content: "";
+}
+
+.rich-text-content strong {
+  font-weight: 600;
+}
+
+.rich-text-content em {
+  font-style: italic;
+}
+
+.rich-text-content u {
+  text-decoration: underline;
+}
+
+/* Rich Text Editor - ContentEditable Styles */
+[contenteditable] {
+  outline: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+/* Dark theme support for contentEditable */
+.dark [contenteditable] {
+  color: rgb(243 244 246);
+}
+
+[contenteditable] p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+[contenteditable] div {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+}
+
+[contenteditable] br {
+  line-height: 1.4;
+  display: block;
+}
+
+/* Ensure empty lines are visible in contentEditable */
+[contenteditable] div:empty::before {
+  content: '\00a0'; /* Non-breaking space to make empty lines visible */
+  display: inline-block;
+}
+
+[contenteditable] p:empty::before {
+  content: '\00a0'; /* Non-breaking space to make empty lines visible */
+  display: inline-block;
+}
+
+[contenteditable] strong {
+  font-weight: 600;
+}
+
+[contenteditable] em {
+  font-style: italic;
+}
+
+[contenteditable] u {
+  text-decoration: underline;
+}
+
+[contenteditable] ul,
+[contenteditable] ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+[contenteditable] li {
+  margin: 0;
+}
+
+[contenteditable] li p {
+  margin: 0;
+}
+
+/* Ensure proper z-index for formatting toolbar */
+.formatting-toolbar {
+  z-index: 1000 !important;
+}
+
+/* Rich Text Display Mode (when not editing) */
+.tiptap-display {
+  white-space: pre-wrap; /* Preserve line breaks and spaces */
+  word-wrap: break-word;
+}
+
+.tiptap-display p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.tiptap-display div {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Handle different types of line breaks browsers create */
+.tiptap-display br {
+  line-height: 1.4;
+  display: block;
+  margin: 0;
+}
+
+/* Ensure empty divs created by browsers on Enter are visible */
+.tiptap-display div:empty::before {
+  content: '\00a0'; /* Non-breaking space to make empty lines visible */
+  display: inline-block;
+}
+
+.tiptap-display p:empty::before {
+  content: '\00a0'; /* Non-breaking space to make empty lines visible */
+  display: inline-block;
+}
+
+/* Ensure br tags actually create line breaks in all contexts */
+br {
+  line-height: inherit;
+}
+
+.rich-text-editor-content br,
+.tiptap-display br,
+.rich-text-content br {
+  display: block !important;
+  content: "" !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tiptap-display strong {
+  font-weight: 600;
+}
+
+.tiptap-display em {
+  font-style: italic;
+}
+
+.tiptap-display u {
+  text-decoration: underline;
+}
+
+.tiptap-display ul,
+.tiptap-display ol {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.tiptap-display li {
+  margin: 0;
+}
+
+.tiptap-display li p {
+  margin: 0;
+}
+
+/* Text alignment classes for contentEditable */
+[contenteditable] div[style*="text-align: left"],
+[contenteditable] p[style*="text-align: left"] {
+  text-align: left !important;
+}
+
+[contenteditable] div[style*="text-align: center"],
+[contenteditable] p[style*="text-align: center"] {
+  text-align: center !important;
+}
+
+[contenteditable] div[style*="text-align: right"],
+[contenteditable] p[style*="text-align: right"] {
+  text-align: right !important;
+}
+
+/* Highlight styles */
+[contenteditable] span[style*="background-color"] {
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.tiptap-display span[style*="background-color"] {
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Rich Text Editor Consistent Padding */
+.rich-text-editor-content {
+  padding: 12px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.rich-text-editor-content p,
+.rich-text-editor-content div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix contentEditable first/last element margins */
+.rich-text-editor-content > *:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.rich-text-editor-content > *:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Input field improvements for better visibility and interaction */
+.link-manager input {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+  padding: 6px 8px !important;
+  border-radius: 4px !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.link-manager input:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 1px #3b82f6 !important;
+}
+
+.link-manager input:hover:not(:focus) {
+  border-color: #9ca3af !important;
+}
+
+/* Dialog input improvements */
+[data-slot="dialog-content"] input {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+[data-slot="dialog-content"] input:focus {
+  outline: none !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 1px #3b82f6 !important;
+}
+
+/* Node Search Dialog Animations */
+[data-slot="dialog-content"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-slot="dialog-overlay"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Tabs smooth transitions */
+[data-radix-tabs-trigger] {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-radix-tabs-content] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Smooth scroll areas */
+[data-radix-scroll-area-viewport] {
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Video container improvements */
+.video-masonry-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Video Grid Container with Container Queries */
+.video-grid-container {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.video-grid-container > .video-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  /* Default: Single column for very narrow containers */
+  grid-template-columns: 1fr;
+}
+
+/* Container-based responsive grid - adjusts to node width, not screen width */
+@container (min-width: 300px) {
+  .video-grid-container > .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@container (min-width: 500px) {
+  .video-grid-container > .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@container (min-width: 700px) {
+  .video-grid-container > .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@container (min-width: 900px) {
+  .video-grid-container > .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@container (min-width: 1200px) {
+  .video-grid-container > .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Video Container Styles */
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+/* Video Item Styling */
+.video-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  min-height: 120px;
+}
+
+.video-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Container-based video sizing */
+@container (min-width: 300px) {
+  .video-item {
+    min-height: 140px;
+  }
+}
+
+@container (min-width: 500px) {
+  .video-item {
+    min-height: 160px;
+  }
+}
+
+@container (min-width: 700px) {
+  .video-item {
+    min-height: 180px;
+  }
+}
+
+@container (min-width: 900px) {
+  .video-item {
+    min-height: 200px;
+  }
+}
+
+/* Video Controls Styling */
+.video-controls {
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 12px;
+  gap: 8px;
+}
+
+/* Progress Bar Styling */
+.video-progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.video-progress-bar:hover {
+  background: rgba(255, 255, 255, 0.3);
+  height: 10px;
+}
+
+.video-progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  transition: width 0.1s ease-out;
+}

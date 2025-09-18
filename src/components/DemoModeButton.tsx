@@ -1,0 +1,1 @@
+// This file has been removed as demo mode functionality is no longer needed

@@ -1,2 +1,11 @@
-# IdeaScape---Infinite-Canvas
-🚀 Built for Figma Make-a-thon: Canvas - Infinite Workspace   Not just a whiteboard — an AI-powered canvas where ideas, images, links &amp; videos connect, organize, and come alive.   ⚡ Summarize. 🌐 Suggest. 🎨 Auto-layout.   Your brain, visualized.
+
+  # Infinite Canvas Web App
+
+  This is a code bundle for Infinite Canvas Web App. The original project is available at https://www.figma.com/design/tH08U5z8U3fADIhorLAvGm/Infinite-Canvas-Web-App.
+
+  ## Running the code
+
+  Run `npm i` to install the dependencies.
+
+  Run `npm run dev` to start the development server.
+  
